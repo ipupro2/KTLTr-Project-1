@@ -111,7 +111,7 @@ void UpdateBoard(char board[30][100], location curLocation)
 	}
 }
 
-void HideCursor()
+void HideCursor()//Hide blinking cursor
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO info;
@@ -120,7 +120,7 @@ void HideCursor()
 	SetConsoleCursorInfo(h, &info);
 }
 
-void GotoPosition(int r, int c)
+void GotoPosition(int r, int c)//Move cursor to specified position
 {
 	HANDLE h = NULL;
 	if (!h)
