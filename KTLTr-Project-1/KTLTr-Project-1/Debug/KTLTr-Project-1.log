@@ -1,0 +1,9 @@
+﻿  main.cpp
+c:\users\msii\source\repos\ktltr-project-1\ktltr-project-1\main.cpp(22): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(459): note: see declaration of 'kbhit'
+c:\users\msii\source\repos\ktltr-project-1\ktltr-project-1\main.cpp(24): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: see declaration of 'getch'
+c:\users\msii\source\repos\ktltr-project-1\ktltr-project-1\main.cpp(26): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: see declaration of 'getch'
+c:\users\msii\source\repos\ktltr-project-1\ktltr-project-1\main.cpp(118): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+  KTLTr-Project-1.vcxproj -> C:\Users\MSII\source\repos\KTLTr-Project-1\Debug\KTLTr-Project-1.exe
