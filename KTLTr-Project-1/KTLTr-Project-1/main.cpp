@@ -46,11 +46,23 @@ void GameCore(char board[30][100], location curLoc)
 					break;
 				case 72://up
 					if (curLoc.r > 0)
+					{
+						GotoPosition(curLoc.r, curLoc.c + 1);
+						cout << "\b ";
+						GotoPosition(curLoc.r-1, curLoc.c + 1);
+						cout << "\bo";
 						curLoc.r--;
+					}
 					break;
 				case 80://down
 					if (curLoc.r < 30)
+					{
+						GotoPosition(curLoc.r, curLoc.c + 1);
+						cout << "\b ";
+						GotoPosition(curLoc.r + 1, curLoc.c + 1);
+						cout << "\bo";
 						curLoc.r++;
+					}
 					break;
 			}
 			UpdateBoard(board, curLoc);
