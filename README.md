@@ -4,10 +4,10 @@
 <p>
   Thành Viên:
  <ul>
-  <li style="color: red;">Võ Minh Triều</li>
-  <li>Nguyễn Đức Trực</li>
-  <li>Nguyễn Thủy</li></li>
-  <li>Tuyết Trinh</li>
+   <li><b>Võ Minh Triều</b></li>
+   <li>Nguyễn Đức Trực</li>
+   <li>Nguyễn Thủy</li></li>
+   <li>Tuyết Trinh</li>
 </p>
 
 <img src="https://i.imgur.com/tIW7wRp.png">
