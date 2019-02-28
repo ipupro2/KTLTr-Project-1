@@ -1,6 +1,6 @@
 # KTLTr-Project-1
-Đồ án nhập môn lập trình C++ 
-  18CTT5 - VNU - HCMUS
+<h4>Đồ án nhập môn lập trình C++</h4> 
+<h5>18CTT5 - VNU - HCMUS</h3>
 <p>
   Thành Viên:
  <ul>
