@@ -4,7 +4,7 @@
 <p>
   Thành Viên:
  <ul>
-  <li>Võ Minh Triều</li>
+  <li style="color: red;">Võ Minh Triều</li>
   <li>Nguyễn Đức Trực</li>
   <li>Nguyễn Thủy</li></li>
   <li>Tuyết Trinh</li>
