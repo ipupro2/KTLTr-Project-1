@@ -10,4 +10,4 @@
   <li>Tuyết Trinh</li>
 </p>
 
-<img src="https://imgur.com/a/8d7ixB4">
+<img src="https://i.imgur.com/tIW7wRp.png">
