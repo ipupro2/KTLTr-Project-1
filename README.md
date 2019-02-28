@@ -8,6 +8,7 @@
    <li>Nguyễn Đức Trực</li>
    <li>Nguyễn Thủy</li></li>
    <li>Tuyết Trinh</li>
+   <li>Nguyễn Nhị Cẩm Tiên</li>
 </p>
 
 <img src="https://i.imgur.com/tIW7wRp.png">
