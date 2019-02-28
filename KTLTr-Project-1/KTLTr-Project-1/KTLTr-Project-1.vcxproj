@@ -139,7 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animations.cpp" />
+    <ClCompile Include="bulletControl.cpp" />
+    <ClCompile Include="coreProcessing.cpp" />
+    <ClCompile Include="draw.cpp" />
+    <ClCompile Include="initialize.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="consoleHandle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
