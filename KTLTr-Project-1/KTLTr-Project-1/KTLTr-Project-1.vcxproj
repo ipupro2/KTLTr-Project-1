@@ -139,9 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="animations.cpp" />
     <ClCompile Include="bulletControl.cpp" />
     <ClCompile Include="coreProcessing.cpp" />
+    <ClCompile Include="delete.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="initialize.cpp" />
     <ClCompile Include="main.cpp" />

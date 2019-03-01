@@ -17,6 +17,6 @@ void GotoPosition(int r, int c)//Move cursor to specified location
 	{
 		h = GetStdHandle(STD_OUTPUT_HANDLE);
 	}
-	COORD C = { c, r };
+	COORD C = { (short)c, (short)r };
 	SetConsoleCursorPosition(h, C);
 }

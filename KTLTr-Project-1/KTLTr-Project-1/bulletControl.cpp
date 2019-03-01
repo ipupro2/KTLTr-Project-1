@@ -10,13 +10,15 @@ void Shoot(location loc, char board[height][width], location bullets[], int bull
 	bullets[bulletCount] = _bullet;
 }
 
-void BulletControl(location bullets[], int bulletCount) {
+void BulletControl(location bullets[], int &bulletCount) {
 	for (int i = 0; i < bulletCount; i++)
 	{
 		if (bullets[i].r == 0)
 		{
 			GotoPosition(0, bullets[i].c + 1);
 			cout << "\b ";
+			DeleteElement(bullets, bulletCount, i);
+			i--;
 		}
 		else
 		{

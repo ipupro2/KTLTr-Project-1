@@ -1,6 +1,10 @@
 #include "functions.h"
 
-void playerAnimation(location loc)
+void TextAnimation()
 {
-	
+	char text[height];
+	for (int i = 0; i < strlen(creditText) - height; i++)
+	{
+		
+	}
 }

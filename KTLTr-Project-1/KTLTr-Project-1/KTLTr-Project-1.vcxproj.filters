@@ -33,7 +33,7 @@
     <ClCompile Include="bulletControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="animations.cpp">
+    <ClCompile Include="delete.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,16 +1,2 @@
-﻿  animations.cpp
-  bulletControl.cpp
-  consoleHandle.cpp
-c:\users\msii\source\repos\ktltr-project-1\ktltr-project-1\consolehandle.cpp(20): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-  coreProcessing.cpp
-c:\users\msii\source\repos\ktltr-project-1\ktltr-project-1\coreprocessing.cpp(11): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(459): note: see declaration of 'kbhit'
-c:\users\msii\source\repos\ktltr-project-1\ktltr-project-1\coreprocessing.cpp(13): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: see declaration of 'getch'
-c:\users\msii\source\repos\ktltr-project-1\ktltr-project-1\coreprocessing.cpp(15): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: see declaration of 'getch'
-  draw.cpp
-  initialize.cpp
-  main.cpp
-  Generating Code...
+﻿  coreProcessing.cpp
   KTLTr-Project-1.vcxproj -> C:\Users\MSII\source\repos\KTLTr-Project-1\Debug\KTLTr-Project-1.exe
