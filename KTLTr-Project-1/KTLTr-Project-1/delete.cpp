@@ -1,4 +1,4 @@
-#include <iostream>
+#include "functions.h"
 
 void Delete(int a[],int &n,int vt)
 {
