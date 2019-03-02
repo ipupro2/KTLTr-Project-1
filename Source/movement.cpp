@@ -3,7 +3,7 @@
 int upSpeed = 0;
 int downSpeed = 0;
 
-void playerMove(location &curLoc)
+void PlayerMove(location &curLoc)
 {
 	if (GetAsyncKeyState(VK_LEFT))
 	{
