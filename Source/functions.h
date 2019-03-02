@@ -13,7 +13,8 @@ using namespace std;
 #define creditText "  Trieu Truc Thuy Trinh Tien"
 #define width 100
 #define height 30
-#define shootingDelay 10000
+#define delayTime 1000000
+#define maxHorizontalSpeed 3 //Number of calls is skipped when move up down
 
 struct location
 {
@@ -30,3 +31,4 @@ void DrawPlayer(location loc, char direction);//Draw player with the gun in spec
 void Shoot(location loc, char board[height][width], location bullets[], int bulletCount);//Create a bullet(*) in top of player
 void BulletControl(location bullets[], int &bulletCount);//Move bullets up or destroy enemy or disappear
 void DeleteElement(location a[], int &n, int vt);//Delete a Element in aray in specific index
+void playerMove(location &curLoc);//Move player in 4 directions
