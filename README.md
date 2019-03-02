@@ -14,3 +14,10 @@
 Ảnh Demo
 
 <img src="https://i.imgur.com/tIW7wRp.png">
+
+<b>Cập nhật gần đây</b>
+<ul>
+  <li>Bổ sung menu tạm dừng</li>
+  <li>Bổ sung thiên thạch</li>
+  <li>Bổ sung điểm</li>
+</ul>
