@@ -20,4 +20,5 @@
   <li>Bổ sung menu tạm dừng</li>
   <li>Bổ sung thiên thạch</li>
   <li>Bổ sung điểm</li>
+  <li>Sửa lỗi điểm trắng, sọc xanh</li>
 </ul>
