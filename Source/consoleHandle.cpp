@@ -1,5 +1,4 @@
 #include "functions.h"
-#include <Windows.h>
 
 void HideCursor()//Hide blinking color in console
 {

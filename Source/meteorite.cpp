@@ -13,7 +13,7 @@ void CreateNewMeteorite()
 	n++;
 }
 
-void MeteoriteControl()
+void MeteoriteControl(unsigned long &score)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -24,6 +24,8 @@ void MeteoriteControl()
 		{
 			DeleteElement(meteoriteLoc, n, i);
 			i--;
+			score++;
+			UpdateScore(score);
 		}
 		else
 		{

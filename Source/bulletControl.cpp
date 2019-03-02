@@ -1,8 +1,7 @@
 #include "functions.h"
 
-void Shoot(location loc, char board[height][width], location bullets[], int bulletCount) {
+void Shoot(location loc, location bullets[], int bulletCount) {
 	GotoPosition(loc.r - 1, loc.c + 1);
-	board[loc.r - 1][loc.r] = '*';
 	cout << "\b" << bullet;
 	location _bullet;
 	_bullet.r = loc.r - 1;

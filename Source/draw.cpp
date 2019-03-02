@@ -1,15 +1,20 @@
 #include "functions.h"
 
-void DrawBoard(char board[height][width])
+void InitializeBoard()
 {
+	//We don't use height is 30 because of stuttering issue
 	for (int i = 0; i < height; i++)
 	{
 		for (int j = 0; j < width; j++)
 		{
-			cout << board[i][j];
+			cout << " ";
 		}
 		cout << " " << rect << "              " << creditText[i] <<"\n";
 	}
+	GotoPosition(height, width+2);
+	cout << "\b" << rect;
+	GotoPosition(0, width + 14);
+	cout << "\b\b\b\b\b\b\b\b\b\b\bScore: 000000000";
 }
 
 void DrawPlayer(location loc, char direction)

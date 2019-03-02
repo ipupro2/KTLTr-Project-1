@@ -34,7 +34,7 @@ void PlayerMove(location &curLoc)
 	if (GetAsyncKeyState(VK_DOWN))
 	{
 		downSpeed++;
-		if (curLoc.r < height - 2 && downSpeed >= maxHorizontalSpeed)
+		if (curLoc.r < height - 1 && downSpeed >= maxHorizontalSpeed)
 		{
 			downSpeed = 0;
 			curLoc.r++;
