@@ -21,4 +21,5 @@
   <li>Bổ sung thiên thạch</li>
   <li>Bổ sung điểm</li>
   <li>Sửa lỗi điểm trắng, sọc xanh</li>
+  <li>Thay đổi cách cập nhật vị trí vật thể(Loại bỏ mảng 2 chiều board)</li>
 </ul>
