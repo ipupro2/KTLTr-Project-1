@@ -1,28 +1,25 @@
 #include "functions.h"
 
-location meteoriteLoc[20];
-int n = 0;
-
-void CreateNewMeteorite()
+void CreateNewMeteorite(position meteoriteLoc[], int &meteoriteCount)
 {
 	int x = rand() % width;
 	GotoPosition(0, x + 2);
 	cout << "\b\b" << rect << rect;
-	meteoriteLoc[n].r = 0;
-	meteoriteLoc[n].c = x;
-	n++;
+	meteoriteLoc[meteoriteCount].r = 0;
+	meteoriteLoc[meteoriteCount].c = x;
+	meteoriteCount++;
 }
 
-void MeteoriteControl(unsigned long &score)
+void MeteoriteControl(unsigned long &score, position meteoriteLoc[], int &meteoriteCount)
 {
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < meteoriteCount; i++)
 	{
 		GotoPosition(meteoriteLoc[i].r, meteoriteLoc[i].c + 2);
 		cout << "\b\b  ";
 		meteoriteLoc[i].r++;
 		if (meteoriteLoc[i].r > height)
 		{
-			DeleteElement(meteoriteLoc, n, i);
+			DeleteElement(meteoriteLoc, meteoriteCount, i);
 			i--;
 			score++;
 			UpdateScore(score);

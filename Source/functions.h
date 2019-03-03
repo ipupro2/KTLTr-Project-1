@@ -13,26 +13,32 @@ using namespace std;
 #define creditText "  Trieu Truc Thuy Trinh Tien"
 #define width 100
 #define height 29
-#define delayTime 100000000
-#define maxHorizontalSpeed 1 //Number of calls is skipped when move up down
+#define delayTime 20000000
+#define maxVerticalSpeed 1 //Number of calls is skipped when move up down
 
-struct location
+struct position
 {
 	int r;//row
 	int c;//column
 };
 
-void HideCursor();//Hide blinking color in console
-void GotoPosition(int r, int c);//Move cursor to specified location
-void GameCore(location curLoc);//Core processing for game
+void HideCursor();//Hide blinking cursor in console
+void GotoPosition(int r, int c);//Move cursor to specified position
+void GameCore(position curPos);//Core processing for game
 void InitializeBoard();//Draw the board when begin game
-void DrawPlayer(location loc, char direction);//Draw player with the gun in specified location and the body in below
-void Shoot(location loc, location bullets[], int bulletCount);//Create a bullet(*) in top of player
-void BulletControl(location bullets[], int &bulletCount);//Move bullets up or destroy enemy or disappear
-void DeleteElement(location a[], int &n, int vt);//Delete a Element in aray in specific index
-void PlayerMove(location &curLoc);//Move player in 4 directions
-void CreateNewMeteorite();//Create new meteorite in random position
-void MeteoriteControl(unsigned long &score);//Move the meteorite down and destroy if necessary
+void DrawPlayer(position loc, char direction);//Draw player with the gun in specified position and the body in below
+void Shoot(position loc, position bullets[], int bulletCount);//Create a bullet(*) in top of player
+void BulletControl(position bullets[], int &bulletCount);//Move bullets up or destroy enemy or disappear
+void DeleteElement(position a[], int &n, int vt);//Delete a Element in aray in specific index
+void PlayerMove(position &curPos);//Move player in 4 directions
+void CreateNewMeteorite(position meteoriteLoc[], int &meteoriteCount);//Create new meteorite in random position
+void MeteoriteControl(unsigned long &score, position meteoriteLoc[], int &meteoriteCount);//Move the meteorite down and destroy if necessary
 void UpdateScore(unsigned long score);//Update score on console
 void PauseGame(int &pause);//Pause game and show Pause Menu
 void PauseMenu(int &pause, int &curSelection);//Enable use choose to continue or exit game
+//void DestroyObject(position loc);//Destroy and remove object from screen
+void BulletHit(position bullets[], int &bulletCount, position meteoriteLoc[], int &meteoriteCount);//Return 1 if bullet hit other object, and  call DestroyObject function
+void PlayerHit(position playerPosition, position meteoriteLoc[], int &meteoriteCount, int &gameOver);//If Player hit an object, game will over
+void MeteoriteDestroy(position loc);//Destroy Meteor in specified position(remove it from console)
+void GameOver(int &gameOver);//Show the gameover menu
+void GameOverMenu(position &curPos);//Enable player choose to try again or exit

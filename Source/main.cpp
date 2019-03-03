@@ -2,10 +2,13 @@
 
 int main()
 {
-	location curLocation; // currentLocation are default set to width/2 height/2
-	curLocation.c = width/2;
-	curLocation.r = height/2;
-	InitializeBoard();
-	GameCore(curLocation);
+	position curPosition; // currentLocation are default set to width/2 height/2
+	curPosition.c = width/2;
+	curPosition.r = height/2;
+	while (1)
+	{
+		GameCore(curPosition);
+		GameOverMenu(curPosition);
+	}
 	return 0;
 }

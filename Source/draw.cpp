@@ -17,7 +17,7 @@ void InitializeBoard()
 	cout << "\b\b\b\b\b\b\b\b\b\b\bScore: 000000000";
 }
 
-void DrawPlayer(location loc, char direction)
+void DrawPlayer(position loc, char direction)
 {
 	GotoPosition(loc.r, loc.c + 1);
 	cout << "\b";
