@@ -59,7 +59,7 @@ void PauseMenu(int &pause, int &curSelection)
 void GameOver(int &gameOver)
 {
 	GotoPosition(height / 2, width / 2 + 4);
-	cout << "\b\b\b\b\\b\b\b\b\bGAME OVER";
+	cout << "\b\b\b\b\b\b\b\b\bGAME OVER";
 	GotoPosition(height / 2 + 2, width / 2 + 6);
 	cout << "\b\b\b\b\b\b\b\b\b>Try Again";
 	GotoPosition(height / 2 + 3, width / 2 + 2);

@@ -14,18 +14,34 @@ void MeteoriteControl(unsigned long &score, position meteoriteLoc[], int &meteor
 {
 	for (int i = 0; i < meteoriteCount; i++)
 	{
-		GotoPosition(meteoriteLoc[i].r, meteoriteLoc[i].c + 2);
-		cout << "\b\b  ";
 		meteoriteLoc[i].r++;
 		if (meteoriteLoc[i].r > height)
 		{
-			DeleteElement(meteoriteLoc, meteoriteCount, i);
-			i--;
 			score++;
 			UpdateScore(score);
+			if (meteoriteLoc[i].r == height + 1)
+			{
+				GotoPosition(meteoriteLoc[i].r - 2, meteoriteLoc[i].c + 2);
+				cout << "\b\b  ";
+				GotoPosition(meteoriteLoc[i].r - 3, meteoriteLoc[i].c + 2);
+				cout << "\b\b  ";
+				GotoPosition(meteoriteLoc[i].r - 1, meteoriteLoc[i].c + 2);
+				cout << "\b\b||";
+			}
+			else
+			{
+				GotoPosition(meteoriteLoc[i].r - 2, meteoriteLoc[i].c + 2);
+				DeleteElement(meteoriteLoc, meteoriteCount, i);
+				cout << "\b\b  ";
+				i--;
+			}
 		}
 		else
 		{
+			GotoPosition(meteoriteLoc[i].r - 3, meteoriteLoc[i].c + 2);
+			cout << "\b\b  ";
+			GotoPosition(meteoriteLoc[i].r - 1, meteoriteLoc[i].c + 2);
+			cout << "\b\b||";
 			GotoPosition(meteoriteLoc[i].r, meteoriteLoc[i].c + 2);
 			cout << "\b\b" << rect << rect;
 		}

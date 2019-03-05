@@ -24,7 +24,7 @@ void BulletControl(position bullets[], int &bulletCount) {
 			GotoPosition(bullets[i].r, bullets[i].c + 1);
 			cout << "\b ";
 			GotoPosition(bullets[i].r - 1, bullets[i].c + 1);
-			cout << "\b*";
+			cout << "\b" << bullet;
 			bullets[i].r--;
 		}
 	}

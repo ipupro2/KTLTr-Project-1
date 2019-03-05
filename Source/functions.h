@@ -13,7 +13,7 @@ using namespace std;
 #define creditText "  Trieu Truc Thuy Trinh Tien"
 #define width 100
 #define height 29
-#define delayTime 20000000
+#define delayTime 50
 #define maxVerticalSpeed 1 //Number of calls is skipped when move up down
 
 struct position
@@ -36,7 +36,6 @@ void MeteoriteControl(unsigned long &score, position meteoriteLoc[], int &meteor
 void UpdateScore(unsigned long score);//Update score on console
 void PauseGame(int &pause);//Pause game and show Pause Menu
 void PauseMenu(int &pause, int &curSelection);//Enable use choose to continue or exit game
-//void DestroyObject(position loc);//Destroy and remove object from screen
 void BulletHit(position bullets[], int &bulletCount, position meteoriteLoc[], int &meteoriteCount);//Return 1 if bullet hit other object, and  call DestroyObject function
 void PlayerHit(position playerPosition, position meteoriteLoc[], int &meteoriteCount, int &gameOver);//If Player hit an object, game will over
 void MeteoriteDestroy(position loc);//Destroy Meteor in specified position(remove it from console)
