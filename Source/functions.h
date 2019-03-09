@@ -13,8 +13,9 @@ using namespace std;
 #define creditText "  Trieu Truc Thuy Trinh Tien"
 #define width 100
 #define height 29
-#define delayTime 50
+#define delayTime 40
 #define maxVerticalSpeed 1 //Number of calls is skipped when move up down
+#define fixedTime 30
 
 struct position
 {
@@ -38,6 +39,6 @@ void PauseGame(int &pause);//Pause game and show Pause Menu
 void PauseMenu(int &pause, int &curSelection);//Enable use choose to continue or exit game
 void BulletHit(position bullets[], int &bulletCount, position meteoriteLoc[], int &meteoriteCount);//Return 1 if bullet hit other object, and  call DestroyObject function
 void PlayerHit(position playerPosition, position meteoriteLoc[], int &meteoriteCount, int &gameOver);//If Player hit an object, game will over
-void MeteoriteDestroy(position loc);//Destroy Meteor in specified position(remove it from console)
+void MeteoriteDestroy(position loc);//Destroy Meteor in specified position(remove it from console
 void GameOver(int &gameOver);//Show the gameover menu
 void GameOverMenu(position &curPos);//Enable player choose to try again or exit

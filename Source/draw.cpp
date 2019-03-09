@@ -2,7 +2,7 @@
 
 void InitializeBoard()
 {
-	//We don't use height is 30 because of stuttering issue
+	//We don't use height of 30 lines because of stuttering issue
 	for (int i = 0; i < height; i++)
 	{
 		for (int j = 0; j < width; j++)
@@ -17,44 +17,44 @@ void InitializeBoard()
 	cout << "\b\b\b\b\b\b\b\b\b\b\bScore: 000000000";
 }
 
-void DrawPlayer(position loc, char direction)
+void DrawPlayer(position pos, char direction)
 {
-	GotoPosition(loc.r, loc.c + 1);
+	GotoPosition(pos.r, pos.c + 1);
 	cout << "\b";
 	cout << square;
-	GotoPosition(loc.r + 1, loc.c + 2);
+	GotoPosition(pos.r + 1, pos.c + 2);
 	cout << "\b\b\b" << rect << rect << rect;
 	switch (direction)
 	{
 		case 'L':
 		{
-			GotoPosition(loc.r, loc.c + 2);
+			GotoPosition(pos.r, pos.c + 2);
 			cout << "\b ";
-			GotoPosition(loc.r + 1, loc.c + 3);
+			GotoPosition(pos.r + 1, pos.c + 3);
 			cout << "\b ";
 			break;
 		}
 		case 'R':
 		{
-			GotoPosition(loc.r, loc.c);
+			GotoPosition(pos.r, pos.c);
 			cout << "\b ";
-			GotoPosition(loc.r + 1, loc.c - 1);
+			GotoPosition(pos.r + 1, pos.c - 1);
 			cout << "\b ";
 			break;
 		}
 		case 'U':
 		{
-			GotoPosition(loc.r + 2, loc.c + 2);
+			GotoPosition(pos.r + 2, pos.c + 2);
 			cout << "\b\b\b   ";
 			break;
 		}
 		case 'D':
 		{
-			GotoPosition(loc.r - 1, loc.c + 1);
+			GotoPosition(pos.r - 1, pos.c + 1);
 			cout << "\b ";
-			GotoPosition(loc.r, loc.c + 2);
+			GotoPosition(pos.r, pos.c + 2);
 			cout << "\b ";
-			GotoPosition(loc.r, loc.c);
+			GotoPosition(pos.r, pos.c);
 			cout << "\b ";
 		}
 	}
