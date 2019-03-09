@@ -16,10 +16,15 @@
 <img src="https://i.imgur.com/tIW7wRp.png">
 
 <b>Cập nhật gần đây</b>
+<b>V1.1</b>
 <ul>
   <li>Bổ sung menu tạm dừng</li>
   <li>Bổ sung thiên thạch</li>
   <li>Bổ sung điểm</li>
   <li>Sửa lỗi điểm trắng, sọc xanh</li>
   <li>Thay đổi cách cập nhật vị trí vật thể(Loại bỏ mảng 2 chiều board)</li>
+</ul>
+<b>V1.0</b>
+<ul>
+  <li>Hoàn thiện cơ bản game</b>
 </ul>
