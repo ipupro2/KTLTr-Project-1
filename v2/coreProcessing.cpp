@@ -33,7 +33,7 @@ void GameCore(position curLoc)
 					bulletCount++;
 				}
 				BulletHit(bullets, bulletCount, meteoriteLoc, meteoriteCount, board, score);
-				if (count % 5 == 0)
+				if (count % 4 == 0)
 					MeteoriteControl(score, meteoriteLoc, meteoriteCount, board);
 				if (count % 20 == 0)
 					CreateNewMeteorite(meteoriteLoc, meteoriteCount, board);

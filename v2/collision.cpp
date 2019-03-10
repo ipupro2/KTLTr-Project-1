@@ -28,24 +28,10 @@ void BulletHit(position bullets[], int &bulletCount, position meteoriteLoc[], in
 
 void PlayerHit(position playerPosition, position meteoriteLoc[], int &meteoriteCount, int &gameOver, CHAR_INFO board[])
 {
-	if (CollideWithMeteor(playerPosition, meteoriteLoc, meteoriteCount, board))
+	int r = playerPosition.r;
+	int c = playerPosition.c;
+	if (CollideWithMeteor({r,c}, meteoriteLoc, meteoriteCount, board) || CollideWithMeteor({r+1,c}, meteoriteLoc, meteoriteCount, board)
+		|| CollideWithMeteor({ r + 1,c + 1}, meteoriteLoc, meteoriteCount, board) || CollideWithMeteor({ r + 1,c + 2}, meteoriteLoc, meteoriteCount, board)
+		|| CollideWithMeteor({ r + 1,c - 1}, meteoriteLoc, meteoriteCount, board) || CollideWithMeteor({ r + 1,c -2}, meteoriteLoc, meteoriteCount, board))
 		GameOver(gameOver);
-	else
-	{
-		playerPosition.r++;
-		if (CollideWithMeteor(playerPosition, meteoriteLoc, meteoriteCount, board))
-			GameOver(gameOver);
-		else
-		{
-			playerPosition.c++;
-			if (CollideWithMeteor(playerPosition, meteoriteLoc, meteoriteCount, board))
-				GameOver(gameOver);
-			else
-			{
-				playerPosition.c-=2;
-				if (CollideWithMeteor(playerPosition, meteoriteLoc, meteoriteCount, board))
-					GameOver(gameOver);
-			}
-		}
-	}
 }

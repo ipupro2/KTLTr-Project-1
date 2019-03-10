@@ -2,9 +2,9 @@
 
 void CreateNewMeteorite(position meteoriteLoc[], int &meteoriteCount, CHAR_INFO board[])
 {
-	int x = rand() % width;
-	SetBoardValue(board, 0, x, 219);
-	SetBoardValue(board, 0, x + 1, 219);
+	int x = rand() % (width - 1);
+	SetBoardValue(board, 0, x, ' ', 112);
+	SetBoardValue(board, 0, x + 1, ' ', 112);
 	meteoriteLoc[meteoriteCount].r = 0;
 	meteoriteLoc[meteoriteCount].c = x;
 	meteoriteCount++;
@@ -26,8 +26,8 @@ void MeteoriteControl(unsigned long &score, position meteoriteLoc[], int &meteor
 		}
 		else
 		{
-			SetBoardValue(board, meteoriteLoc[i].r, meteoriteLoc[i].c, 219);
-			SetBoardValue(board, meteoriteLoc[i].r, meteoriteLoc[i].c + 1, 219);
+			SetBoardValue(board, meteoriteLoc[i].r, meteoriteLoc[i].c, ' ', 112);
+			SetBoardValue(board, meteoriteLoc[i].r, meteoriteLoc[i].c + 1, ' ', 112);
 			SetBoardValue(board, meteoriteLoc[i].r - 1, meteoriteLoc[i].c);
 			SetBoardValue(board, meteoriteLoc[i].r - 1, meteoriteLoc[i].c + 1);
 		}
