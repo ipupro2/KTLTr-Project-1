@@ -18,11 +18,15 @@
 <b>Cập nhật gần đây</b>
 <hr/>
 <b>v3</b>
-Tối ưu code
-Bổ sung Boss
+<ul>
+  <li>Tối ưu code</b>
+  <li>Bổ sung Boss</li>
+</ul>
 <hr/>
 <b>V2</b>
-Thay đổi việc xuất dữ liệu từ cout sang buffer(Tăng hiệu năng)
+<ul>
+  <li>Thay đổi việc xuất dữ liệu từ cout sang buffer(Tăng hiệu năng)</li>
+</ul>
 <hr/>
 <b>V1.1</b>
 <ul>
