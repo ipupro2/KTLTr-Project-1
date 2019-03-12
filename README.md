@@ -26,6 +26,7 @@
 <b>V2</b>
 <ul>
   <li>Thay đổi việc xuất dữ liệu từ cout sang buffer(Tăng hiệu năng)</li>
+  <li>Sửa lỗi sọc xanh(Xuất hiện trên một số máy)</li>
 </ul>
 <hr/>
 <b>V1.1</b>
@@ -33,7 +34,7 @@
   <li>Bổ sung menu tạm dừng</li>
   <li>Bổ sung thiên thạch</li>
   <li>Bổ sung điểm</li>
-  <li>Sửa lỗi điểm trắng, sọc xanh</li>
+  <li>Sửa lỗi điểm trắng</li>
   <li>Thay đổi cách cập nhật vị trí vật thể(Loại bỏ mảng 2 chiều board)</li>
 </ul>
 <hr/>
