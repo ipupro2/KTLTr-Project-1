@@ -1,0 +1,11 @@
+﻿  console.cpp
+  coreProcessing.cpp
+  draw.cpp
+c:\users\thuy nguyen\downloads\ktltr-project-1-master\v4\draw.cpp(10): warning C4101: 'map': unreferenced local variable
+  functionality.cpp
+  gameObject.cpp
+  main.cpp
+  movement.cpp
+  physic.cpp
+  Generating Code...
+  KTLT.vcxproj -> D:\KTLT\Ly_Thuyet\KTLT\Debug\KTLT.exe
