@@ -2,6 +2,7 @@
 
 int main()
 {
+	Intro();
 	while (1)
 	{
 		GameCore();

@@ -149,6 +149,8 @@
     <ClCompile Include="movement.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="console.h" />
+    <ClInclude Include="draw.h" />
     <ClInclude Include="functions.h" />
   </ItemGroup>
   <ItemGroup>

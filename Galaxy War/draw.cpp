@@ -5,21 +5,17 @@ static CHAR_INFO screen[10000];//Buffer for game screen
 static CHAR_INFO flashScreen[10000];
 static SMALL_RECT rect;//Rectangle which is drawn the game in
 
-
-void InitializeGame()
+void DrawScreenFromFile(string stringPath)
 {
 	fstream file;
-	file.open("game.map");
-	SetConsoleTitle(L"Galaxy War");
-	HideCursor();
+	file.open(stringPath);
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	rect.Top = 0;
 	rect.Left = 0;
 	rect.Bottom = screenHeight;
 	rect.Right = screenWidth;
 	ReadConsoleOutput(h, screen, { screenWidth, screenHeight }, { 0, 0 }, &rect);
-	
-	//Load Map from file
+
 	for (int i = 0; i < screenHeight; i++)
 	{
 		for (int j = 0; j < screenWidth; j++)
@@ -31,6 +27,28 @@ void InitializeGame()
 			}
 		}
 	}
+	WriteConsoleOutput(h, screen, { screenWidth, screenHeight }, { 0, 0 }, &rect);
+}
+
+void Intro()
+{
+	SetConsoleTitle(L"Galaxy War");
+	HideCursor();
+	DrawScreenFromFile("intro.map");
+	while (!GetAsyncKeyState(VK_RETURN))
+	{
+		GotoPosition(24, 47);
+		if (GetTickCount() % 500 == 0)
+			cout << "<Press Enter to Continue>";
+		else if (GetTickCount() % 250 == 0)
+			cout << "                         ";
+	}
+	Sleep(100);
+}
+
+void InitializeGame()
+{
+	DrawScreenFromFile("game.map");
 }
 
 void FlashScreen()

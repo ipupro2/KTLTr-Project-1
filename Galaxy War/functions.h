@@ -4,7 +4,6 @@
 #include <cmath>
 using namespace std;
 
-#define creditText "  Trieu Truc Thuy Trinh Tien"
 #define boardWidth 100
 #define boardHeight 30
 #define screenWidth 120
@@ -43,6 +42,7 @@ void GameCore();
 
 //Initialize data for the screen when begin game
 //Khởi tạo giá trị cho màn hình khi bắt đầu game(Load dữ liệu từ file bên ngoài và vẽ ra màn hình)
+void Intro();
 void InitializeGame();
 
 //Draw player with the gun in specified position and the body in below
@@ -136,7 +136,7 @@ void DrawPlan(position pos);
 //Xoá máy bay.
 void DeletePlan(position pos);
 
-//T?o m?ng ch?a v? trí máy bay.
+//Tạo mảng chúa vị trí máy bay.
 void CreatePlan(position planLoc[], int &planCount);
 void PlanShoot(position planLoc[], int &planCount, position bullets[], int &bulletCount);
 void PlanComputer(position planLoc[], int &planCount);

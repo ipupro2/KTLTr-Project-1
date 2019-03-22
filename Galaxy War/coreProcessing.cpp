@@ -48,7 +48,9 @@ void GameCore()
 				if (count % 4 == 0)
 					BulletControl(enemyBullets, enemyBulletCount, 'D', '+');
 				if (count % shootingDelay == 0)
+				{
 					Shoot(playerPos, playerBullets, playerBulletCount, '^');
+				}
 				BulletHit(playerBullets, playerBulletCount, meteoriteLoc, meteoriteCount, score);
 				if (count % 4 == 0)
 				{
@@ -84,6 +86,8 @@ void GameCore()
 					CreatePowerUp(powerUpPos);
 				}
 				UpdateHP(playerHP);
+				if (playerHP < 10)
+					cout << "\a";
 				if (playerHP <= 0)
 				{
 					gameOver = 1;
