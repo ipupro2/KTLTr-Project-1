@@ -49,7 +49,7 @@ void GameCore()
 					BulletControl(enemyBullets, enemyBulletCount, 'D', '+');
 				if (count % shootingDelay == 0)
 					Shoot(playerPos, playerBullets, playerBulletCount, '^');
-				BulletHit(playerBullets, playerBulletCount, meteoriteLoc, meteoriteCount, score);
+	
 				if (count % 4 == 0)
 				{
 					MeteoriteControl(score, meteoriteLoc, meteoriteCount);
@@ -67,6 +67,8 @@ void GameCore()
 					PlanShoot(planLoc, planCount, enemyBullets, enemyBulletCount);
 				}
 				HitPlayer(playerPos, meteoriteLoc, meteoriteCount, enemyBullets, enemyBulletCount, playerHP);
+				BulletHitPlan(playerBullets,playerBulletCount, planLoc,planCount, score);
+
 				if (count % 2 == 0)
 					PlayerMove(playerPos);
 				if (bossHP > 0 && count % 4 == 0)

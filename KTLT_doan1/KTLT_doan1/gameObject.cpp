@@ -166,6 +166,8 @@ void PlanComputer(position planLoc[], int &planCount)
 	}
 }
 
+
+
 void CreatePowerUp(position &pos)
 {
 	pos.r = 1;

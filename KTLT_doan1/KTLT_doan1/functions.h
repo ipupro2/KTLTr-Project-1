@@ -140,6 +140,9 @@ void DeletePlan(position pos);
 void CreatePlan(position planLoc[], int &planCount);
 void PlanShoot(position planLoc[], int &planCount, position bullets[], int &bulletCount);
 void PlanComputer(position planLoc[], int &planCount);
+void BulletHitPlan(position playerBullets[], int &playerBulletCount, position planLoc[],
+	int &planCount, unsigned long score);
+int CollideWithPlan(position pos, position planLoc[], int &planCount);
 
 //Items
 void CreatePowerUp(position &pos);

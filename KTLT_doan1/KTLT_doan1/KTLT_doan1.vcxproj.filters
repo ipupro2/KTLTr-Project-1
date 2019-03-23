@@ -15,45 +15,42 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\KTLT\KTLT\gameObject.cpp">
+    <ClCompile Include="console.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\KTLT\KTLT\main.cpp">
+    <ClCompile Include="coreProcessing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\KTLT\KTLT\movement.cpp">
+    <ClCompile Include="draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\KTLT\KTLT\physic.cpp">
+    <ClCompile Include="functionality.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\KTLT\KTLT\console.cpp">
+    <ClCompile Include="gameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\KTLT\KTLT\coreProcessing.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\KTLT\KTLT\draw.cpp">
+    <ClCompile Include="movement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\KTLT\KTLT\functionality.cpp">
+    <ClCompile Include="physic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\KTLT\KTLT\intro.map">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="..\..\KTLT\KTLT\game.map">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="intro1.map">
-      <Filter>Source Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\KTLT\KTLT\functions.h">
+    <ClInclude Include="functions.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="game.map">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="intro.map">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

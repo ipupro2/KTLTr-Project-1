@@ -84,3 +84,29 @@ void HitPlayer(position playerPosition, position meteoriteLoc[], int &meteoriteC
 		}
 	}
 }
+int CollideWithPlan(position pos, position planLoc[], int &planCount) 
+{
+	for (int i = 0; i < planCount; i++)
+	{
+		if (pos.r == planLoc[i].r && (pos.c == planLoc[i].c || pos.c == planLoc[i].c + 1))
+		{
+			DeletePlan(planLoc[i]);
+			DeleteElement(planLoc, planCount, i);
+			return 1;
+		}
+	}
+	return 0;
+}
+void BulletHitPlan(position playerBullets[], int &playerBulletCount, position planLoc[],
+	int &planCount, unsigned long score)
+{
+	for (int i = 0; i < playerBulletCount; i++)
+	{
+		if (CollideWithPlan(playerBullets[i], planLoc, planCount))
+		{
+			score++;
+			UpdateScore(score);
+			DeleteElement(playerBullets, playerBulletCount, i);
+		}
+	}
+}
