@@ -1,5 +1,0 @@
-﻿  coreProcessing.cpp
-  gameObject.cpp
-d:\ktlt\ly_thuyet\ktlt\ktlt\gameobject.cpp(48): warning C4101: '_bullet': unreferenced local variable
-  Generating Code...
-  KTLT.vcxproj -> D:\KTLT\Ly_Thuyet\KTLT\Debug\KTLT.exe
