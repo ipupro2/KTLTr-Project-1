@@ -1,0 +1,12 @@
+﻿  bulletControl.cpp
+  consoleHandle.cpp
+  coreProcessing.cpp
+  deleteElement.cpp
+  draw.cpp
+  functionality.cpp
+  main.cpp
+  meteorite.cpp
+  movement.cpp
+  score.cpp
+  Generating Code...
+  KTLT_doan1.vcxproj -> D:\KTLT\KTLT_doan1\Debug\KTLT_doan1.exe
