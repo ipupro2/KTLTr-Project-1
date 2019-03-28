@@ -1,6 +1,6 @@
-#include "draw.h"
+﻿#include "draw.h"
 #include <fstream>
-#include <string>
+
 static CHAR_INFO screen[10000];//Buffer for game screen
 static CHAR_INFO flashScreen[10000];
 static SMALL_RECT rect;//Rectangle which is drawn the game in
@@ -9,14 +9,6 @@ void DrawScreenFromFile(string stringPath)
 {
 	fstream file;
 	file.open(stringPath);
-	if (!file)
-	{
-		GotoPosition(screenWidth / 2, screenHeight / 2);
-		cout << "Missing \"" << stringPath << "\"";
-		GotoPosition(screenWidth / 2, screenHeight / 2);
-		Sleep(2000);
-		exit(0);
-	}
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	rect.Top = 0;
 	rect.Left = 0;
@@ -85,7 +77,7 @@ void RedrawBoard()
 	rect.Left = 0;
 	rect.Bottom = screenHeight;
 	rect.Right = screenWidth;
-	WriteConsoleOutput(h, screen, { screenWidth, screenHeight }, { 0,0 },&rect);
+	WriteConsoleOutput(h, screen, { screenWidth, screenHeight }, { 0,0 }, &rect);
 }
 
 void SetBoardValue(int row, int column, int code, int color)

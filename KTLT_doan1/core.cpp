@@ -86,7 +86,6 @@ void GameCore()
 				}
 				HitPlayer(playerPos, meteoriteLoc, meteoriteCount, enemyBullets, enemyBulletCount, playerHP);
 				BulletHitPlane(playerBullets,playerBulletCount, planeLoc,planeCount, score);
-
 				if (count % 2 == 0)
 					PlayerMove(playerPos);
 				if (bossHP > 0 && count % 4 == 0)
@@ -98,23 +97,28 @@ void GameCore()
 					Shoot({ bossPosition.r + 6, bossPosition.c }, enemyBullets, enemyBulletCount, '+');
 				if (bossHP > 0)
 					HitBoss(playerBullets, playerBulletCount, bossPosition, bossHP);
-				if (count % 500 == 0)
+				if (count % 5000 == 0)
+				{
+					CreatePowerUp(powerUpPos);
+				}
+				if (count % 3000 == 0)
+				{
 					shootingDelay = 20;
+				}
 				if (count % 2000 == 0 && bossHP <= 0)
 				{
 					CreateBoss(bossHP, bossPosition);
-					CreatePowerUp(powerUpPos);
 				}
 				BulletHit(playerBullets, playerBulletCount, meteoriteLoc, meteoriteCount, score);
 				UpdateHP(playerHP);
+				PauseGame(pause);
 				if (playerHP <= 0)
 				{
 					gameOver = 1;
-					GameOver();
+					GameOver(score);
 				}
 				if (!gameOver)
 					RedrawBoard();
-				PauseGame(pause);
 			}
 			while (lastedTime > fixedTime)
 			{

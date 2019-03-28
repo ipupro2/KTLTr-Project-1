@@ -2,21 +2,9 @@
 
 void DrawPowerUp(position pos)
 {
-	if (pos.r > 1)
-	{
-		SetBoardValue(pos.r - 1, pos.c, '^');
-		SetBoardValue(pos.r - 1, pos.c - 1, '|');
-		SetBoardValue(pos.r - 1, pos.c - 1, '|');
-	}
-	SetBoardValue(pos.r, pos.c, '^');
-	SetBoardValue(pos.r, pos.c + 1, '|');
-	SetBoardValue(pos.r, pos.c - 1, '|');
-	if (pos.r > 2)
-	{
-		SetBoardValue(pos.r - 2, pos.c);
-		SetBoardValue(pos.r - 2, pos.c - 1);
-		SetBoardValue(pos.r - 2, pos.c + 1);
-	}
+	if(pos.r > 1)
+		SetBoardValue(pos.r - 1, pos.c, ' ');
+	SetBoardValue(pos.r, pos.c, 'P');
 }
 
 void CreatePowerUp(position &pos)
@@ -29,8 +17,15 @@ void CreatePowerUp(position &pos)
 void MovePowerUp(position &pos, position playerPos, int &shootingDelay)
 {
 	pos.r++;
+	if (pos.r >= boardHeight)
+	{
+		SetBoardValue(pos.r - 1, pos.c);
+		pos = { -1, -1 };
+		return;
+	}
 	DrawPowerUp(pos);
-	if (pos.r == playerPos.r || (pos.r == playerPos.r + 1 && pos.c >= playerPos.c - 2 && pos.c <= playerPos.c + 2))
+	if ((pos.r == playerPos.r && pos.c == playerPos.c)
+		|| (pos.r == playerPos.r + 1 && pos.c >= playerPos.c - 2 && pos.c <= playerPos.c + 2))
 	{
 		shootingDelay = 4;
 		pos = { -1,-1 };

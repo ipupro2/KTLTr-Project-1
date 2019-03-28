@@ -56,8 +56,27 @@ void PauseMenu(int &pause, int &curSelection)
 	}
 }
 
-void GameOver()
+void GameOver(unsigned long score)
 {
+	string name;
+	GotoPosition(boardHeight / 2, boardWidth / 2 - 5);
+	cout << "Enter your name:";
+	UnhideCursor();
+	GotoPosition(boardHeight / 2, boardWidth / 2 + 20);
+	cin >> name;
+	Sleep(200);
+	HideCursor();
+	FlashScreen();
+	SaveScore({ name, score });
+	saveData data[10];
+	LoadScore(data);
+	GotoPosition(boardHeight / 2, boardWidth / 2 + 20);
+	cout << "Leaderboard:";
+	for (int i = 0; i < 10; i++)
+	{
+		GotoPosition(boardHeight / 2 + i, boardWidth / 2 + 20);
+		cout << data[i].name << " " << data[i].score;
+	}
 	GotoPosition(boardHeight / 2, boardWidth / 2 - 5);
 	cout << "GAME OVER";
 	GotoPosition(boardHeight / 2 + 2, boardWidth / 2 - 6);

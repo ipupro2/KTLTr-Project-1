@@ -9,6 +9,15 @@ void HideCursor()
 	SetConsoleCursorInfo(h, &cursor);
 }
 
+void UnhideCursor()
+{
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO cursor;
+	GetConsoleCursorInfo(h, &cursor);
+	cursor.bVisible = true;
+	SetConsoleCursorInfo(h, &cursor);
+}
+
 void GotoPosition(int r, int c)
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);

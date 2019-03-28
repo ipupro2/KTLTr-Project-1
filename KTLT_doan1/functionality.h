@@ -4,6 +4,7 @@
 #include "console.h"
 #include "gameSetting.h"
 #include "draw.h"
+#include "file.h"
 #include <iostream>
 using namespace std;
 
@@ -23,7 +24,7 @@ void PauseMenu(int &pause, int &curSelection);
 void DeleteElement(position a[], int &n, int vt);
 //Show the gameover menu
 //Hiện menu gameover
-void GameOver();
+void GameOver(unsigned long score);
 //Enable player choose to try again or exit
 //Cho phép người chơi chơi lại hoặc thoát
 void GameOverMenu();

@@ -11,5 +11,8 @@ void BossMovement(position playerPos, position &bossPos);
 void DrawBoss(position bossPos);
 //Phá hủy trùm khi máu nó  = 0
 void DestroyBoss(position bossPos);
+//Draw Boss at specified position
+//Vẽ Boss ở vị tríchỉ định
+void DrawBoss(position bossPos);
 
 #endif // !BOSS_H
