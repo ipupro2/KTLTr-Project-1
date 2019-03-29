@@ -23,9 +23,10 @@ void DrawBoss(position bossPos)
 	SetBoardValue(i, bossPos.c - 1, ' ');
 }
 
-void CreateBoss(int &bossHp, position &bossPos)
+void CreateBoss(int &bossHp, int &maxBossHP, position &bossPos)
 {
-	bossHp = 10;
+	bossHp = maxBossHP;
+	maxBossHP += 2;
 	bossPos = { 1, boardWidth / 2 };
 	DrawBoss(bossPos);
 }

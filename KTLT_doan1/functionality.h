@@ -5,6 +5,7 @@
 #include "gameSetting.h"
 #include "draw.h"
 #include "file.h"
+#include <Windows.h>
 #include <iostream>
 using namespace std;
 

@@ -16,9 +16,9 @@ void GameCore()
 		planeCountMax = 1,//Số lượng tối đa máy bay xuất hiện(Tăng dần theo thời gian),
 		gameOver = 0, //Nếu Game Over biến này trở thành 1
 		count = 0, //Nếu biến đếm đạt đến giá trị nhất định nào đó thì sẽ kích hoạt các sự kiện(hàm)
-		playerHP = 10,//Lượng HP của người chơi
+		playerHP = 1,//Lượng HP của người chơi
 		bossHP = 0,//Lượng HP của Boss
-		maxHp = 10,//Lượng HP tối đa hiện tại của Boss
+		maxBossHp = 10,//Lượng HP tối đa hiện tại của Boss
 		shootingDelay = 20;//Thời gian trì hoãn giữa 2 lần bắn(của người chơi)
 	unsigned long score = 0;//Điểm số người chơi đã đạt được
 	DWORD lastedTime = 0,//Thời gian kể từ lần cuối thực hiện dãy các lệnh, nếu giá trị nó lớn hơn hoặc bằng fixedTime thì dãy lệnh sẽ được
@@ -55,7 +55,9 @@ void GameCore()
 				if (count % 4 == 0)
 					BulletControl(enemyBullets, enemyBulletCount, 'D', '+');
 				if (count % shootingDelay == 0)
+				{
 					Shoot(playerPos, playerBullets, playerBulletCount, '^');
+				}
 	
 				if (count % 4 == 0)
 				{
@@ -85,6 +87,7 @@ void GameCore()
 					PlaneShoot(planeLoc, planeCount, enemyBullets, enemyBulletCount);
 				}
 				HitPlayer(playerPos, meteoriteLoc, meteoriteCount, enemyBullets, enemyBulletCount, playerHP);
+				BulletHit(playerBullets, playerBulletCount, meteoriteLoc, meteoriteCount, score);
 				BulletHitPlane(playerBullets,playerBulletCount, planeLoc,planeCount, score);
 				if (count % 2 == 0)
 					PlayerMove(playerPos);
@@ -107,7 +110,7 @@ void GameCore()
 				}
 				if (count % 2000 == 0 && bossHP <= 0)
 				{
-					CreateBoss(bossHP, bossPosition);
+					CreateBoss(bossHP, maxBossHp, bossPosition);
 				}
 				BulletHit(playerBullets, playerBulletCount, meteoriteLoc, meteoriteCount, score);
 				UpdateHP(playerHP);

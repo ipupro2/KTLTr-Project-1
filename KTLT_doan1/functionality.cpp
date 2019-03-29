@@ -64,6 +64,8 @@ void GameOver(unsigned long score)
 	UnhideCursor();
 	GotoPosition(boardHeight / 2, boardWidth / 2 + 20);
 	cin >> name;
+	//Lệnh sau để loại bỏ nút Enter khi người dùng nhập
+	GetAsyncKeyState(VK_RETURN);
 	Sleep(200);
 	HideCursor();
 	FlashScreen();
@@ -115,7 +117,7 @@ void GameOverMenu()
 		{
 			if (curSelection == 1)
 			{
-				system("cls");
+				FlashScreen();
 				Sleep(200);
 				break;
 			}

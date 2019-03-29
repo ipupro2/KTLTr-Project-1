@@ -1,0 +1,25 @@
+﻿  bullet.cpp
+  core.cpp
+  functionality.cpp
+  main.cpp
+  meteorite.cpp
+  plane.cpp
+  player.cpp
+  Generating code
+  0 of 248 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+boss.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+bullet.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+console.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+core.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+draw.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+file.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+functionality.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+item.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+main.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+meteorite.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+plane.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+player.obj : warning LNK4020: a type record in 'd:\ktltr-project-1-master - backup\ktlt_doan1\ktlt_doan1\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+  KTLT_doan1.vcxproj -> D:\KTLTr-Project-1-master - BackUp\KTLT_doan1\Release\KTLT_doan1.exe

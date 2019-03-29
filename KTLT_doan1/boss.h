@@ -4,7 +4,7 @@
 #include "draw.h"
 
 //Tạo trùm ở phía trên màn hình
-void CreateBoss(int &bossHp, position &bossPos);
+void CreateBoss(int &bossHp, int &maxBossHP, position &bossPos);
 //Boss di chuyển đến người chơi(chỉ qua trái và phải)
 void BossMovement(position playerPos, position &bossPos);
 //Tạo thiên thạch mới ở vị trí ngẫu nhiên(ở phía trên màn hình)
