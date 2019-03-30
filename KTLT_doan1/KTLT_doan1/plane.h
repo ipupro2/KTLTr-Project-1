@@ -15,5 +15,6 @@ void DeletePlane(position pos);
 void CreatePlane(position planeLoc[], int &planeCount);
 void PlaneShoot(position planeLoc[], int &planeCount, position bullets[], int &bulletCount);
 void PlaneComputer(position planeLoc[], int &planeCount);
+void PlayerCollidePlan(position Player, position planeLoc[], int &planeCount, int &playerHP);
 
 #endif // !Plane_H

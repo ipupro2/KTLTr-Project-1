@@ -125,23 +125,3 @@ void BulletHitPlane(position playerBullets[], int &playerBulletCount, position p
 		}
 	}
 }
-int CollideWithPlane_Player(position pos, position posPlane)
-{
-	if (pos.r == posPlane.r && (pos.c == posPlane.c || pos.c == posPlane.c + 1 || pos.c == posPlane.c +2 ) || (pos.c == posPlane.c+1 && pos.r  ==posPlane.r + 1))
-	{
-		return 1;
-	}
-	return 0;
-}
-void Player_Plane(position Player, position planeLoc[], int &planeCount, int &playerHP)
-{
-	
-	int r = Player.r;
-	int c = Player.c;
-	for (int i=0;i<planeCount;i++)
-		if (CollideWithPlane_Player({ r,c },planeLoc[i]) || CollideWithPlane_Player({ r,c+1}, planeLoc[i]) || CollideWithPlane_Player({ r,c + 2 }, planeLoc[i]) || CollideWithPlane_Player({ r,c + 3 }, planeLoc[i]) || CollideWithPlane_Player({ r,c + 4 }, planeLoc[i]))
-		{
-			playerHP--;
-			FlashScreen();
-	    }
-}

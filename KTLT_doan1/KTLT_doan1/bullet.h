@@ -32,7 +32,5 @@ void HitBoss(position bullets[], int &bulletCount, position bossPosition, int &b
 int CollideWithPlane(position pos, position planeLoc[], int &planeCount);
 void BulletHitPlane(position playerBullets[], int &playerBulletCount, position planeLoc[],
 	int &planeCount, unsigned long &score);
-void Player_Plane(position Player, position planeLoc[], int &planeCount, int &playerHP);
-int CollideWithPlane_Player(position pos, position posPlane);
 
 #endif

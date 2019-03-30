@@ -59,20 +59,19 @@ void PauseMenu(int &pause, int &curSelection)
 void GameOver(unsigned long score)
 {
 	string name;
-	GotoPosition(boardHeight / 2, boardWidth / 2 - 5);
-	cout << "Enter your name:";
 	UnhideCursor();
-	GotoPosition(boardHeight / 2, boardWidth / 2 + 20);
+	system("cls");
+	cout << "Enter your name: ";
 	cin >> name;
 	//Lệnh sau để loại bỏ nút Enter khi người dùng nhập
 	GetAsyncKeyState(VK_RETURN);
 	Sleep(200);
 	HideCursor();
-	FlashScreen();
 	SaveScore({ name, score });
 	saveData data[10];
 	LoadScore(data);
-	GotoPosition(boardHeight / 2, boardWidth / 2 + 20);
+	FlashScreen();
+	GotoPosition(boardHeight / 2 - 2, boardWidth / 2 + 20);
 	cout << "Leaderboard:";
 	for (int i = 0; i < 10; i++)
 	{
@@ -117,6 +116,7 @@ void GameOverMenu()
 		{
 			if (curSelection == 1)
 			{
+				FlashScreen();
 				Sleep(200);
 				break;
 			}

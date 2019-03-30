@@ -16,9 +16,10 @@ void GameCore()
 		planeCountMax = 1,//Số lượng tối đa máy bay xuất hiện(Tăng dần theo thời gian),
 		gameOver = 0, //Nếu Game Over biến này trở thành 1
 		count = 0, //Nếu biến đếm đạt đến giá trị nhất định nào đó thì sẽ kích hoạt các sự kiện(hàm)
-		playerHP = 10,//Lượng HP của người chơi
+		playerHP = 20,//Lượng HP của người chơi
 		bossHP = 0,//Lượng HP của Boss
 		maxBossHp = 10,//Lượng HP tối đa hiện tại của Boss
+		powerUpRemainTime = 0,
 		shootingDelay = 20;//Thời gian trì hoãn giữa 2 lần bắn(của người chơi)
 	unsigned long score = 0;//Điểm số người chơi đã đạt được
 	DWORD lastedTime = 0,//Thời gian kể từ lần cuối thực hiện dãy các lệnh, nếu giá trị nó lớn hơn hoặc bằng fixedTime thì dãy lệnh sẽ được
@@ -34,7 +35,9 @@ void GameCore()
 		meteoriteLoc[100],//Mảng các thiên thạch
 		planeLoc[100],//Mảng các máy bay địch
 		bossPosition,//Vị trí của Boss trong game
+		hpPosition = { -1,-1 },
 		powerUpPos = {-1,-1};//Vị trí của item Power Up(Tăng tốc độ bắn)
+	InitializeGame();
 	InitializeGame();
 	DrawPlayer(playerPos);
 
@@ -53,7 +56,7 @@ void GameCore()
 				count++;
 				BulletControl(playerBullets, playerBulletCount, 'U', '^');
 				if (count % 4 == 0)
-					BulletControl(enemyBullets, enemyBulletCount, 'D', '+');
+					BulletControl(enemyBullets, enemyBulletCount, 'D', '|');
 				if (count % shootingDelay == 0)
 				{
 					Shoot(playerPos, playerBullets, playerBulletCount, '^');
@@ -71,7 +74,11 @@ void GameCore()
 					SetBoardValue(2, 109, (CLOCKS_PER_SEC / deltaTime) % 10 + '0');
 					if (powerUpPos.r != -1)
 					{
-						MovePowerUp(powerUpPos, playerPos, shootingDelay);
+						MovePowerUp(powerUpPos);
+					}
+					if (hpPosition.r != -1)
+					{
+						MoveHP(hpPosition);
 					}
 					CreateNewMeteorite(meteoriteLoc, meteoriteCount);
 					if (createdCount < planeCountMax)
@@ -87,9 +94,11 @@ void GameCore()
 					PlaneShoot(planeLoc, planeCount, enemyBullets, enemyBulletCount);
 				}
 				HitPlayer(playerPos, meteoriteLoc, meteoriteCount, enemyBullets, enemyBulletCount, playerHP);
-				Player_Plane(playerPos, planeLoc, planeCount, playerHP);
 				BulletHit(playerBullets, playerBulletCount, meteoriteLoc, meteoriteCount, score);
 				BulletHitPlane(playerBullets,playerBulletCount, planeLoc,planeCount, score);
+				PlayerCollidePowerUp(powerUpPos, playerPos, powerUpRemainTime);
+				PlayerCollideHP(hpPosition, playerPos, playerHP);
+				PlayerCollidePlan(playerPos, planeLoc, planeCount, playerHP);
 				if (count % 2 == 0)
 					PlayerMove(playerPos);
 				if (bossHP > 0 && count % 4 == 0)
@@ -98,14 +107,22 @@ void GameCore()
 				}
 
 				if(bossHP > 0 && count % 10 == 0)
-					Shoot({ bossPosition.r + 6, bossPosition.c }, enemyBullets, enemyBulletCount, '+');
+					Shoot({ bossPosition.r + 6, bossPosition.c }, enemyBullets, enemyBulletCount, '|');
 				if (bossHP > 0)
 					HitBoss(playerBullets, playerBulletCount, bossPosition, bossHP);
-				if (count % 5000 == 0)
-				{
-					CreatePowerUp(powerUpPos);
-				}
 				if (count % 3000 == 0)
+				{
+					if (rand() % 2)
+						CreatePowerUp(powerUpPos);
+					else
+						CreateHP(hpPosition);
+				}
+				if (powerUpRemainTime > 0)
+				{
+					powerUpRemainTime--;
+					shootingDelay = 4;
+				}
+				else
 				{
 					shootingDelay = 20;
 				}
@@ -114,15 +131,18 @@ void GameCore()
 					CreateBoss(bossHP, maxBossHp, bossPosition);
 				}
 				BulletHit(playerBullets, playerBulletCount, meteoriteLoc, meteoriteCount, score);
-				UpdateHP(playerHP);
-				PauseGame(pause);
+				UpdateHP(playerHP);	
+				DrawPlayer(playerPos);
 				if (playerHP <= 0)
 				{
 					gameOver = 1;
 					GameOver(score);
 				}
 				if (!gameOver)
+				{
 					RedrawBoard();
+					PauseGame(pause);
+				}
 			}
 			while (lastedTime > fixedTime)
 			{

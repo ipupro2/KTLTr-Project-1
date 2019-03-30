@@ -1,6 +1,5 @@
 ﻿#include "draw.h"
 #include <fstream>
-#include <string>
 
 static CHAR_INFO screen[10000];//Buffer for game screen
 static CHAR_INFO flashScreen[10000];
@@ -10,12 +9,6 @@ void DrawScreenFromFile(string stringPath)
 {
 	ifstream file;
 	file.open(stringPath);
-	if (!file)
-	{
-		GotoPosition(screenHeight / 2, screenWidth / 2 - 5);
-		cout << "Error opening " << stringPath;
-		Sleep(10000);
-	}
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	rect.Top = 0;
 	rect.Left = 0;
@@ -28,6 +21,7 @@ void DrawScreenFromFile(string stringPath)
 		for (int j = 0; j < screenWidth; j++)
 		{
 			file.get(screen[i*screenWidth + j].Char.AsciiChar);
+			screen[i*screenWidth + j].Attributes = 7;
 			if (screen[i*screenWidth + j].Char.AsciiChar == '\n')
 			{
 				j--;
@@ -42,6 +36,7 @@ void Intro()
 {
 	SetConsoleTitleA("Galaxy War");
 	HideCursor();
+	system("cls");
 	GotoPosition(screenHeight / 2, screenWidth / 2 - 10);
 	cout << "Who are we?";
 	Sleep(1000);
