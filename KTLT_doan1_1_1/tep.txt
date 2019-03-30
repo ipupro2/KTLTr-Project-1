@@ -1,0 +1,30 @@
+        ********************************************************************************************************
+        *                ***   ***  *****  **    *  *     *               *              HELP                  *
+        *                *  * *  *  *      * *   *  *     *               *                                    *
+        *                *   *   *  *****  *  *  *  *     *               *                                    *
+        *                *       *  *      *   * *  *     *               *   You will control the spacecraft  *
+        *                *       *  *****  *    **  *******               * to shoot down enemies, meteorites  *
+        *                                                                 * and bosses. Items will appear      *
+        *      ======================================================     * randomly, get them to recover and  *
+        *                                                                 * upgrade your spacecraft.           *
+        *                                                                 *                                    *
+        *                                                                 * Guide: Press 4 arrow keys to move. *
+        *                             NEW GAME                            * Bullets are shooted automatically. *
+        *                               RANK                              * Game ends when your HP has been 0. *
+        *                               HELP                              *                                    *
+        *                               EXIS                              *                                    *
+        *                                                                 *                                    *
+        *                                                                 *         ----GOOD LUCK------        *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        *                                                                 *                                    *
+        ******************************************************************************************************** 
