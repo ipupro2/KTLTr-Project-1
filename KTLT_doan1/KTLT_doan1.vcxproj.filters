@@ -62,6 +62,12 @@
     <None Include="game.map">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="plane.map">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="mainMenu.map">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bullet.h">

@@ -21,6 +21,8 @@
   <ItemGroup>
     <None Include="game.map" />
     <None Include="intro.map" />
+    <None Include="mainMenu.map" />
+    <None Include="plane.map" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="boss.h" />

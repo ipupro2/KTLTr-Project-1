@@ -3,6 +3,7 @@
 int main()
 {
 	Intro();
+	MainMenu();
 	while (1)
 	{
 		GameCore();

@@ -1,9 +1,6 @@
 ﻿#ifndef BULLET_H
 #define BULLET_H
 
-#include "draw.h"
-#include "gameSetting.h"
-#include "functionality.h"
 #include "boss.h"
 #include "meteorite.h"
 #include "player.h"
@@ -29,7 +26,6 @@ void HitPlayer(position playerPosition, position meteoritePos[], int &meteoriteC
 	int &enemyBulletCount, int &playerHP);
 //Kiểm tra trùm có trúng đạn không
 void HitBoss(position bullets[], int &bulletCount, position bossPosition, int &bossHP, unsigned long &score);
-int CollideWithPlane(position pos, position planePos[], int &planeCount);
 void BulletHitPlane(position playerBullets[], int &playerBulletCount, position planePos[],
 	int &planeCount, unsigned long &score);
 

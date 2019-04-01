@@ -67,7 +67,7 @@ int CollidePlane(position pos, position posPlane)
 	}
 	return 0;
 }
-void PlayerCollidePlan(position Player, position planePos[], int &planeCount, int &playerHP)
+void PlayerCollidePlane(position Player, position planePos[], int &planeCount, int &playerHP)
 {
 
 	int r = Player.r;

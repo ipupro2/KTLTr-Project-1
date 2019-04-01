@@ -1,9 +1,6 @@
 ﻿#ifndef Plane_H
 #define Plane_H
 
-#include "gameSetting.h"
-#include "draw.h"
-#include "functionality.h"
 #include "bullet.h"
 
 void DrawPlane(position pos);
@@ -15,6 +12,6 @@ void DeletePlane(position pos);
 void CreatePlane(position planePos[], int &planeCount);
 void PlaneShoot(position planePos[], int &planeCount, position bullets[], int &bulletCount);
 void PlaneComputer(position planePos[], int &planeCount);
-void PlayerCollidePlan(position Player, position planePos[], int &planeCount, int &playerHP);
+void PlayerCollidePlane(position Player, position planePos[], int &planeCount, int &playerHP);
 
 #endif // !Plane_H

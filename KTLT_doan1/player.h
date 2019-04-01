@@ -1,8 +1,7 @@
 ﻿#ifndef PLAYER_H
 #define PLAYER_H
 
-#include "gameSetting.h"
-#include "functionality.h"
+#include "draw.h"
 
 void DrawPlayer(position pos, char direction = ' ');
 //Hàm di chuyển người chơi bằng các phím mũi tên

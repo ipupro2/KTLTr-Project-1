@@ -1,5 +1,126 @@
 ﻿#include "functionality.h"
 
+void Intro()
+{
+	SetConsoleTitleA("Galaxy War");
+	HWND console = GetConsoleWindow();
+	SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), {120, 30});
+	RECT rect;
+	GetWindowRect(console, &rect);
+	MoveWindow(console, rect.left, rect.top, 1100, 647, true);
+	HideCursor();
+	system("cls");
+	GotoPosition(screenHeight / 2, screenWidth / 2 - 10);
+	cout << "Who are we?";
+	Sleep(1000);
+	GotoPosition(screenHeight / 2, screenWidth / 2 - 10);
+	cout << "We're here to make the difference!";
+	Sleep(1000);
+	DrawScreenFromFile("intro.map");
+	while (!GetAsyncKeyState(VK_RETURN))
+	{
+		GotoPosition(24, 47);
+		if (GetTickCount() % 500 == 0)
+			cout << "<Press Enter to Continue>";
+		else if (GetTickCount() % 250 == 0)
+			cout << "                         ";
+	}
+	Sleep(200);
+}
+
+void MainMenu()
+{
+	DrawScreenFromFile("mainMenu.map");
+	int pos = 0;
+	GotoPosition(11, 33);
+	cout << ">>";
+	GotoPosition(11, 49);
+	cout << "<<";
+	while (1)
+	{
+		while (1)
+		{
+			if (GetAsyncKeyState(VK_UP))
+			{
+				GotoPosition(pos + 11, 33);
+				cout << "  ";
+				GotoPosition(pos + 11, 49);
+				cout << "  ";
+				pos--;
+				if (pos == -1)
+				{
+					pos = 3;
+					GotoPosition(pos + 11, 33);
+					cout << ">>";
+					GotoPosition(pos + 11, 49);
+					cout << "<<";
+				}
+				else
+				{
+					GotoPosition(pos + 11, 33);
+					cout << ">>";
+					GotoPosition(pos + 11, 49);
+					cout << "<<";
+				}
+				break;
+			}
+			else if (GetAsyncKeyState(VK_DOWN))
+			{
+				GotoPosition(pos + 11, 33);
+				cout << "  ";
+				GotoPosition(pos + 11, 49);
+				cout << "  ";
+				pos++;
+				if (pos == 4)
+				{
+					pos = 0;
+					GotoPosition(pos + 11, 33);
+					cout << ">>";
+					GotoPosition(pos + 11, 49);
+					cout << "<<";
+				}
+				else
+				{
+					GotoPosition(pos + 11, 33);
+					cout << ">>";
+					GotoPosition(pos + 11, 49);
+					cout << "<<";
+				}
+				break;
+			}
+			else if (GetAsyncKeyState(VK_RETURN))
+			{
+				switch (pos)
+				{
+					case 0:
+					{
+						return;
+
+					} break;
+					case 1:
+					{
+					} break;
+					case 2:
+					{
+						GotoPosition(pos + 11, 33);
+						cout << ">>";
+						GotoPosition(pos + 11, 49);
+						cout << "<<";
+					} break;
+					case 3:
+					{
+						exit(0);
+					} 
+					break;
+				}
+				break;
+			}
+
+		}
+		Sleep(100);
+	}
+}
+
 void PauseGame(int &pause)
 {
 	if (GetAsyncKeyState(VK_RETURN) && !pause)

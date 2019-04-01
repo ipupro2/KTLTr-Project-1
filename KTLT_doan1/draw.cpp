@@ -32,34 +32,6 @@ void DrawScreenFromFile(string stringPath)
 	file.close();
 }
 
-void Intro()
-{
-	SetConsoleTitleA("Galaxy War");
-	HideCursor();
-	system("cls");
-	GotoPosition(screenHeight / 2, screenWidth / 2 - 10);
-	cout << "Who are we?";
-	Sleep(1000);
-	GotoPosition(screenHeight / 2, screenWidth / 2 - 10);
-	cout << "We're here to make the difference!";
-	Sleep(1000);
-	DrawScreenFromFile("intro.map");
-	while (!GetAsyncKeyState(VK_RETURN))
-	{
-		GotoPosition(24, 47);
-		if (GetTickCount() % 500 == 0)
-			cout << "<Press Enter to Continue>";
-		else if (GetTickCount() % 250 == 0)
-			cout << "                         ";
-	}
-	Sleep(200);
-}
-
-void InitializeGame()
-{
-	DrawScreenFromFile("game.map");
-}
-
 void FlashScreen()
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -83,8 +55,39 @@ void RedrawBoard()
 	WriteConsoleOutput(h, screen, { screenWidth, screenHeight }, { 0,0 }, &rect);
 }
 
-void SetBoardValue(int row, int column, int code, int color)
+void SetBoardValue(int row, int column, char code, int color)
 {
 	screen[row*screenWidth + column].Char.UnicodeChar = code;
 	screen[row*screenWidth + column].Attributes = color;
+}
+
+void PlaneThroughScreen()
+{
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	fstream file;
+	file.open("plane.map");
+	for (int i = 0; i < screenHeight; i++)
+	{
+		for (int j = 0; j < screenWidth; j++)
+		{
+			file.get(screen[i * screenWidth + j].Char.AsciiChar);
+			if (screen[i * screenWidth + j].Char.AsciiChar == '\n')
+			{
+				j--;
+			}
+		}
+	}
+	file.close();
+	for (int i = 0; i < 120; i++)
+	{
+		WriteConsoleOutput(h, screen, { 120,30 }, { 0, 0 }, &rect);
+		for (int j = 29; j >= 0; j--)
+		{
+			for (int k = 118; k >= 2; k--)
+			{
+				screen[j * 120 + k] = screen[j * 120 + k - 1];
+			}
+		}
+		Sleep(10);
+	}
 }

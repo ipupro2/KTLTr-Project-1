@@ -15,8 +15,8 @@ void GameCore()
 		createdCount = 0,//Số lượng máy bay đã tạo trong lượt 
 		planeCountMax = 1,//Số lượng tối đa máy bay xuất hiện(Tăng dần theo thời gian),
 		gameOver = 0, //Nếu Game Over biến này trở thành 1
-		count = 0, //Nếu biến đếm đạt đến giá trị nhất định nào đó thì sẽ kích hoạt các sự kiện(hàm)
-		playerHP = 20,//Lượng HP của người chơi
+		count = 1999, //Nếu biến đếm đạt đến giá trị nhất định nào đó thì sẽ kích hoạt các sự kiện(hàm)
+		playerHP = 2000,//Lượng HP của người chơi
 		bossHP = 0,//Lượng HP của Boss
 		maxBossHp = 10,//Lượng HP tối đa hiện tại của Boss
 		powerUpRemainTime = 0,
@@ -37,10 +37,9 @@ void GameCore()
 		bossPosition,//Vị trí của Boss trong game
 		hpPosition = { -1,-1 },
 		powerUpPos = {-1,-1};//Vị trí của item Power Up(Tăng tốc độ bắn)
-	InitializeGame();
-	InitializeGame();
+	PlaneThroughScreen();
+	DrawScreenFromFile("game.map");
 	DrawPlayer(playerPos);
-
 	//Dòng While chính của game
 	while (!gameOver)
 	{
@@ -98,7 +97,7 @@ void GameCore()
 				BulletHitPlane(playerBullets,playerBulletCount, planePos,planeCount, score);
 				PlayerCollidePowerUp(powerUpPos, playerPos, powerUpRemainTime);
 				PlayerCollideHP(hpPosition, playerPos, playerHP);
-				PlayerCollidePlan(playerPos, planePos, planeCount, playerHP);
+				PlayerCollidePlane(playerPos, planePos, planeCount, playerHP);
 				if (count % 2 == 0)
 					PlayerMove(playerPos);
 				if (bossHP > 0 && count % 4 == 0)

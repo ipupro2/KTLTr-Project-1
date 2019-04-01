@@ -17,7 +17,7 @@ void CreatePowerUp(position &pos)
 void MovePowerUp(position &pos)
 {
 	pos.r++;
-	if (pos.r >= boardHeight)
+	if (pos.r >= boardHeight - 1)
 	{
 		SetBoardValue(pos.r - 1, pos.c);
 		pos = { -1, -1 };
@@ -46,7 +46,7 @@ void CreateHP(position &pos)
 void MoveHP(position &pos)
 {
 	pos.r++;
-	if (pos.r >= boardHeight)
+	if (pos.r >= boardHeight - 1)
 	{
 		SetBoardValue(pos.r - 1, pos.c);
 		pos = { -1, -1 };
