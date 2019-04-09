@@ -9,6 +9,8 @@
 #include "bullet.h"
 using namespace std;
 
+#define fixedTime 15//Thời gian chờ để cập nhật lại game tính theo ms
+
 //Xử lí chính cho game
 void GameCore();
 

@@ -1,5 +1,10 @@
 #include "bullet.h"
 
+int operator == (position pos1, position pos2)
+{
+	return pos1.r == pos2.r && pos1.c == pos2.c;
+}
+
 void Shoot(position pos, position bullets[], int &bulletCount, char bullet) {
 	SetBoardValue(pos.r, pos.c, bullet);
 	SetBoardValue(pos.r, pos.c, bullet);
@@ -30,14 +35,15 @@ void BulletControl(position bullets[], int &bulletCount, char direction, char bu
 
 int CollideWithBoss(position pos, position bossPos)
 {
-	int i, j;
-	for (i = bossPos.r; i <= bossPos.r + 3; i++)
+	if (pos.r >= bossPos.r && pos.r <= bossPos.r + 4 && pos.c >= bossPos.c - 10 && pos.r <= bossPos.r + 10)
 	{
-		for (j = 0; j < 7; j++)
-		{
-			if ((pos.r == i && pos.c == bossPos.c - j + i) || (pos.r == i && pos.c == bossPos.c + j - i))
-				return 1;
-		}
+		PlaySound(TEXT("Resources/gameEffect/explosion.wav"), NULL, SND_ASYNC);
+		return 1;
+	}
+	if (pos.r == bossPos.r + 5 && (pos.c == bossPos.c - 10 || pos.c == bossPos.c || pos.c == pos.c + 10))
+	{
+		PlaySound(TEXT("Resources/gameEffect/explosion.wav"), NULL, SND_ASYNC);
+		return 1;
 	}
 	return 0;
 }
@@ -57,7 +63,9 @@ void HitBoss(position bullets[], int &bulletCount, position bossPosition, int &b
 	}
 	if (bossHP <= 0)
 	{
+		PlaySound(TEXT("Resources/gameEffect/explosion.wav"), NULL, SND_ASYNC);
 		score += 50;
+		UpdateScore(score);
 		DestroyBoss(bossPosition);
 	}
 }
@@ -69,6 +77,7 @@ void HitMeteorite(position playerBullets[], int &playerBulletCount, position met
 	{
 		if (CollideWithMeteor(playerBullets[i], meteoritePos, meteoriteCount))
 		{
+			PlaySound(TEXT("Resources/gameEffect/explosion.wav"), NULL, SND_ASYNC);
 			score++;
 			UpdateScore(score);
 			DeleteElement(playerBullets, playerBulletCount, i);
@@ -107,6 +116,7 @@ int CollideWithPlane(position pos, position planePos[], int &planeCount)
 	{
 		if (pos.r == planePos[i].r && (pos.c == planePos[i].c || pos.c == planePos[i].c + 1 || pos.c == planePos[i].c + 2))
 		{
+			PlaySound(TEXT("Resources/gameEffect/explosion.wav"), NULL, SND_ASYNC);
 			DeletePlane(planePos[i]);
 			DeleteElement(planePos, planeCount, i);
 			return 1;

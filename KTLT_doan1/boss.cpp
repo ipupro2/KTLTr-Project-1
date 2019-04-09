@@ -1,26 +1,25 @@
 #include "boss.h"
 
+static const string BossSprite[] =
+{
+	" _____|___|_|___|_____ ",
+	" |___________________| ",
+	" |___________________| ",
+	" |=|=====|===|=====|=| ",
+	" |=|======\\=/======|=| ",
+	"  V        V        V  "
+};
+
 void DrawBoss(position bossPos)
 {
-	int i = 0, j = 0;
-	for (i = 1; i <= 4; i++)
+	for (int i = 0; i < 6; i++)
 	{
-		for (j = 0; j < 7; j++)
+		for (int j = -11; j <= 11; j++)
 		{
-			SetBoardValue(i, bossPos.c - j + i, '=');
-			SetBoardValue(i, bossPos.c + j - i, '=');
+			if(bossPos.c + j < boardWidth - 1 && bossPos.c + j > 0)
+				SetBoardValue(bossPos.r + i, bossPos.c + j, BossSprite[i][j+11]);
 		}
-		SetBoardValue(i, bossPos.c - j + i, '|');
-		SetBoardValue(i, bossPos.c - j - 1 + i, ' ');
-		SetBoardValue(i, bossPos.c + j - i, '|');
-		SetBoardValue(i, bossPos.c + j + 1 - i, ' ');
 	}
-	SetBoardValue(i, bossPos.c, '=');
-	SetBoardValue(i, bossPos.c + 1, ' ');
-	SetBoardValue(i++, bossPos.c - 1, ' ');
-	SetBoardValue(i, bossPos.c, '=');
-	SetBoardValue(i, bossPos.c + 1, ' ');
-	SetBoardValue(i, bossPos.c - 1, ' ');
 }
 
 void CreateBoss(int& bossHp, int& maxBossHP, position& bossPos)
@@ -47,17 +46,12 @@ void BossMovement(position playerPos, position& bossPos)
 
 void DestroyBoss(position bossPos)
 {
-	int i, j;
-	for (i = bossPos.r; i <= bossPos.r + 3; i++)
+	for (int i = 0; i < 6; i++)
 	{
-		for (j = 0; j < 7; j++)
+		for (int j = -10; j <= 10; j++)
 		{
-			SetBoardValue(i, bossPos.c - j + i, ' ');
-			SetBoardValue(i, bossPos.c + j - i, ' ');
+			if (bossPos.c + j < boardWidth - 1 && bossPos.c + j > 0)
+				SetBoardValue(bossPos.r + i, bossPos.c + j);
 		}
-		SetBoardValue(i, bossPos.c - j + i, ' ');
-		SetBoardValue(i, bossPos.c + j - i, ' ');
 	}
-	SetBoardValue(i++, bossPos.c, ' ');
-	SetBoardValue(i, bossPos.c, ' ');
 }

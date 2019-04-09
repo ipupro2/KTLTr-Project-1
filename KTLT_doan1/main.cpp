@@ -3,11 +3,15 @@
 int main()
 {
 	Intro();
-	MainMenu();
 	while (1)
 	{
-		GameCore();
-		GameOverMenu();
+		MainMenu();
+		while (1)
+		{
+			GameCore();
+			if (GameOverMenu())
+				break;
+		}
 	}
 	return 0;
 }

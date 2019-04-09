@@ -4,28 +4,34 @@
 #include "draw.h"
 #include "file.h"
 
+//Các xử lí khi mới vào game
 void Intro();
+
+//Các xử lí trong menu chính
 void MainMenu();
-//Update score on console
+
 //Cập nhật điểm lên console
 void UpdateScore(unsigned long score);
+
 //Cập nhật hp của người chơi lên console
 void UpdateHP(int hp);
-//Pause game and show Pause Menu
+
 //Tạm dừng và hiện menu tạm dừng
 void PauseGame(int &pause);
-//Enable user choose to continue or exit game
+
 //CHo phép người chơi chọn tiếp tục hay thoát game
-void PauseMenu(int &pause, int &curSelection);
-//Delete an Element in aray in specific index
+void PauseMenu(int &pause, int &curSelection, int &gameOver);
+
 //Xóa phần tử trong mảng ở vị trí chỉ định
 void DeleteElement(position a[], int &n, int vt);
-//Show the gameover menu
+
 //Hiện menu gameover
 void GameOver(unsigned long score);
-//Enable player choose to try again or exit
-//Cho phép người chơi chơi lại hoặc thoát
-void GameOverMenu();
+
+//Cho phép người chơi chơi lại hoặc thoát về main menu, hàm trả về 1 nếu quay về main menu và 0 nếu chơi lại
+int GameOverMenu();
+
+//Tạo một máy bay bay xuyên qua màn hình(Hiệu ứng đầu game)
 void PlaneThroughScreen();
 
 #endif

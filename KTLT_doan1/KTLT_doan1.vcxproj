@@ -19,26 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <None Include="game.map" />
-    <None Include="intro.map" />
-    <None Include="mainMenu.map" />
-    <None Include="plane.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="boss.h" />
-    <ClInclude Include="bullet.h" />
-    <ClInclude Include="console.h" />
-    <ClInclude Include="core.h" />
-    <ClInclude Include="draw.h" />
-    <ClInclude Include="file.h" />
-    <ClInclude Include="functionality.h" />
-    <ClInclude Include="gameSetting.h" />
-    <ClInclude Include="item.h" />
-    <ClInclude Include="meteorite.h" />
-    <ClInclude Include="plane.h" />
-    <ClInclude Include="player.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="boss.cpp" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="console.cpp" />
@@ -53,25 +33,44 @@
     <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="NormalShot.wav" />
+    <None Include="Resources\map\game.map" />
+    <None Include="Resources\map\help.map" />
+    <None Include="Resources\map\intro.map" />
+    <None Include="Resources\map\leaderboard.map" />
+    <None Include="Resources\map\mainMenu.map" />
+    <None Include="Resources\map\newGame.map" />
+    <None Include="Resources\map\plane.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="boss.h" />
+    <ClInclude Include="bullet.h" />
+    <ClInclude Include="console.h" />
+    <ClInclude Include="core.h" />
+    <ClInclude Include="draw.h" />
+    <ClInclude Include="file.h" />
+    <ClInclude Include="functionality.h" />
+    <ClInclude Include="item.h" />
+    <ClInclude Include="meteorite.h" />
+    <ClInclude Include="plane.h" />
+    <ClInclude Include="player.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{F84102DD-1744-4409-ACE6-C56A5A408F68}</ProjectGuid>
     <RootNamespace>KTLTdoan1</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -84,7 +83,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -152,6 +151,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

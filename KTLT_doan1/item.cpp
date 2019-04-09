@@ -31,6 +31,7 @@ void PlayerCollidePowerUp(position &pos, position playerPos, int &powerUpRemainT
 	if ((pos.r == playerPos.r && pos.c == playerPos.c)
 		|| (pos.r == playerPos.r + 1 && pos.c >= playerPos.c - 2 && pos.c <= playerPos.c + 2))
 	{
+		PlaySound(TEXT("Resources/gameEffect/pickItem.wav"), NULL, SND_ASYNC);
 		powerUpRemainTime = 1000;
 		pos = { -1,-1 };
 	}
@@ -60,6 +61,7 @@ void PlayerCollideHP(position &pos, position playerPos, int &hp)
 	if ((pos.r == playerPos.r && pos.c == playerPos.c)
 		|| (pos.r == playerPos.r + 1 && pos.c >= playerPos.c - 2 && pos.c <= playerPos.c + 2))
 	{
+		PlaySound(TEXT("Resources/gameEffect/pickItem.wav"), NULL, SND_ASYNC);
 		hp += 5;
 		if (hp > 99)
 			hp = 99;

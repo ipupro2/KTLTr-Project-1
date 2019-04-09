@@ -1,5 +1,6 @@
 ﻿#include "draw.h"
 #include <fstream>
+#include <string>
 
 static CHAR_INFO screen[10000];//Buffer for game screen
 static CHAR_INFO flashScreen[10000];
@@ -8,7 +9,14 @@ static SMALL_RECT rect;//Rectangle which is drawn the game in
 void DrawScreenFromFile(string stringPath)
 {
 	ifstream file;
-	file.open(stringPath);
+	file.open("Resources/map/" + stringPath);
+	if (!file)
+	{
+		system("cls");
+		cout << "Missing file \"" << stringPath << "\". \nGame will exit in few seconds.";
+		Sleep(5000);
+		exit(0);
+	}
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	rect.Top = 0;
 	rect.Left = 0;
@@ -65,7 +73,14 @@ void PlaneThroughScreen()
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	fstream file;
-	file.open("plane.map");
+	file.open("Resources/map/plane.map");
+	if (!file)
+	{
+		system("cls");
+		cout << "Missing file \"plane.map\". \nGame will exit in few seconds.";
+		Sleep(5000);
+		exit(0);
+	}
 	for (int i = 0; i < screenHeight; i++)
 	{
 		for (int j = 0; j < screenWidth; j++)

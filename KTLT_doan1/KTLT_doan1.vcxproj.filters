@@ -56,24 +56,54 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="intro.map">
+    <None Include="Resources\map\game.map">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="game.map">
+    <None Include="Resources\map\help.map">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="plane.map">
+    <None Include="Resources\map\intro.map">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="mainMenu.map">
+    <None Include="Resources\map\leaderboard.map">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\map\mainMenu.map">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\map\newGame.map">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\map\plane.map">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="draw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="bullet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core.h">
+    <ClInclude Include="functionality.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="meteorite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="item.h">
@@ -82,34 +112,5 @@
     <ClInclude Include="boss.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="meteorite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="functionality.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="draw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="console.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gameSetting.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="plane.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="file.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="NormalShot.wav">
-      <Filter>Resource Files</Filter>
-    </Media>
   </ItemGroup>
 </Project>

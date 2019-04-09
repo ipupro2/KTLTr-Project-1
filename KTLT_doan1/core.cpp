@@ -22,7 +22,7 @@ void GameCore()
 		powerUpRemainTime = 0,
 		shootingDelay = 20;//Thời gian trì hoãn giữa 2 lần bắn(của người chơi)
 	unsigned long score = 0;//Điểm số người chơi đã đạt được
-	DWORD lastedTime = 0,//Thời gian kể từ lần cuối thực hiện dãy các lệnh, nếu giá trị nó lớn hơn hoặc bằng fixedTime thì dãy lệnh sẽ được
+	ULONGLONG lastedTime = 0,//Thời gian kể từ lần cuối thực hiện dãy các lệnh, nếu giá trị nó lớn hơn hoặc bằng fixedTime thì dãy lệnh sẽ được
 						 //thực hiện. Điều này nhằm giữ cho thời gian chạy trên các máy là tương đồng, và giữa những lúc nhiều vật thể không
 						 //quá chậm so với khi có ít vật thể trong game
 		deltaTime,//Biến dùng để tính thời gian giữa 2 lần gọi hàm GetTickCount64();
@@ -58,20 +58,23 @@ void GameCore()
 					BulletControl(enemyBullets, enemyBulletCount, 'D', '|');
 				if (count % shootingDelay == 0)
 				{
-					PlaySound(TEXT("NormalShot.wav"), NULL, SND_ASYNC);
+					PlaySound(TEXT("Resources/gameEffect/NormalShot.wav"), NULL, SND_ASYNC);
 					Shoot(playerPos, playerBullets, playerBulletCount, '^');
 				}
-
+				if (count % 20 == 0)
+				{
+					CreateNewMeteorite(meteoritePos, meteoriteCount);
+				}
 				if (count % 4 == 0)
 				{
-					MeteoriteControl(score, meteoritePos, meteoriteCount);
+					MeteoriteControl(meteoritePos, meteoriteCount);
 					PlaneComputer(planePos, planeCount);
 				}
 				if (count % 40 == 0)
 				{
-					SetBoardValue(2, 107, (CLOCKS_PER_SEC / deltaTime) / 100 + '0');
-					SetBoardValue(2, 108, (CLOCKS_PER_SEC / deltaTime) % 100 / 10 + '0');
-					SetBoardValue(2, 109, (CLOCKS_PER_SEC / deltaTime) % 10 + '0');
+					SetBoardValue(2, 107, (char)((CLOCKS_PER_SEC / deltaTime) / 100 + 48));
+					SetBoardValue(2, 108, (char)((CLOCKS_PER_SEC / deltaTime) % 100 / 10 +48));
+					SetBoardValue(2, 109, (char)((CLOCKS_PER_SEC / deltaTime) % 10 + 48));
 					if (powerUpPos.r != -1)
 					{
 						MovePowerUp(powerUpPos);
@@ -80,7 +83,6 @@ void GameCore()
 					{
 						MoveHP(hpPosition);
 					}
-					CreateNewMeteorite(meteoritePos, meteoriteCount);
 					if (createdCount < planeCountMax)
 					{
 						CreatePlane(planePos, planeCount);
@@ -99,6 +101,7 @@ void GameCore()
 				PlayerCollidePowerUp(powerUpPos, playerPos, powerUpRemainTime);
 				PlayerCollideHP(hpPosition, playerPos, playerHP);
 				PlayerCollidePlane(playerPos, planePos, planeCount, playerHP);
+				HitMeteorite(playerBullets, playerBulletCount, meteoritePos, meteoriteCount, score);
 				if (count % 2 == 0)
 					PlayerMove(playerPos);
 				if (bossHP > 0 && count % 4 == 0)
@@ -108,8 +111,12 @@ void GameCore()
 
 				if (bossHP > 0 && count % 20 == 0)
 				{
-					PlaySound(TEXT("bossShoot.wav"), NULL, SND_ASYNC);
+					PlaySound(TEXT("Resources/gameEffect/bossShoot.wav"), NULL, SND_ASYNC);
 					Shoot({ bossPosition.r + 6, bossPosition.c }, enemyBullets, enemyBulletCount, '|');
+					if(bossPosition.c - 10 > 0)
+						Shoot({ bossPosition.r + 6, bossPosition.c - 10 }, enemyBullets, enemyBulletCount, '|');
+					if (bossPosition.c + 10 < boardWidth - 1)
+						Shoot({ bossPosition.r + 6, bossPosition.c + 10 }, enemyBullets, enemyBulletCount, '|');
 				}
 				if (bossHP > 0)
 					HitBoss(playerBullets, playerBulletCount, bossPosition, bossHP, score);
@@ -133,13 +140,11 @@ void GameCore()
 				{
 					CreateBoss(bossHP, maxBossHp, bossPosition);
 				}
-				HitMeteorite(playerBullets, playerBulletCount, meteoritePos, meteoriteCount, score);
 				UpdateHP(playerHP);
 				DrawPlayer(playerPos);
 				if (playerHP <= 0)
 				{
 					gameOver = 1;
-					GameOver(score);
 				}
 				if (!gameOver)
 				{
@@ -151,11 +156,13 @@ void GameCore()
 			{
 				lastedTime -= fixedTime;
 			}
+			if (count > 100000)
+				count = 1;
 		}
 		else
 		{
-			PauseMenu(pause, curSelection);
+			PauseMenu(pause, curSelection, gameOver);
 		}
 	}
-	curSelection = 1;
+	GameOver(score);
 }

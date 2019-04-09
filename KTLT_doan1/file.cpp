@@ -3,14 +3,16 @@
 void LoadScore(saveData data[])
 {
 	ifstream inNameScore;
-	inNameScore.open("name_score.txt");
+	inNameScore.open("save.sav");
 	if (!inNameScore)
 	{
+		inNameScore.close();
 		ofstream outNameScore;
-		outNameScore.open("name_score.txt");
+		outNameScore.open("save.sav");
 		for (int i = 0; i < 10; i++)
 			outNameScore << "Noname 0" << endl;
 		outNameScore.close();
+		inNameScore.open("save.sav");
 	}
 	for (int i = 0; i < 10; i++)
 	{
@@ -23,10 +25,10 @@ void LoadScore(saveData data[])
 void SaveScore(saveData data)
 {
 	ifstream inNameScore;
-	inNameScore.open("name_score.txt");
+	inNameScore.open("save.sav");
 	saveData a[10];
 	string t1;
-	unsigned long long t2;
+	unsigned long t2;
 	int i = 0;
 	LoadScore(a);
 	for (i = 0; i < 10; i++)
@@ -48,7 +50,7 @@ void SaveScore(saveData data)
 	cout << endl;
 	inNameScore.close();
 	ofstream outNameScore;
-	outNameScore.open("name_score.txt");
+	outNameScore.open("save.sav");
 	for (i = 0; i < 10; i++)
 	{
 		outNameScore << a[i].name << " " << a[i].score << endl;

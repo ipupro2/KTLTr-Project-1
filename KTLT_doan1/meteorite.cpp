@@ -11,15 +11,13 @@ void CreateNewMeteorite(position meteoritePos[], int &meteoriteCount)
 }
 
 //Hàm điều khiển thiên thạch bằng cách di chuyển nó xuống, khi nó chạm bên dưới màn hình thì phá hủy nó
-void MeteoriteControl(unsigned long &score, position meteoritePos[], int &meteoriteCount)
+void MeteoriteControl(position meteoritePos[], int &meteoriteCount)
 {
 	for (int i = 0; i < meteoriteCount; i++)
 	{
 		meteoritePos[i].r++;
 		if (meteoritePos[i].r >= boardHeight - 1)
 		{
-			score++;
-			UpdateScore(score);
 			SetBoardValue(meteoritePos[i].r - 1, meteoritePos[i].c);
 			SetBoardValue(meteoritePos[i].r - 1, meteoritePos[i].c + 1);
 			DeleteElement(meteoritePos, meteoriteCount, i);
