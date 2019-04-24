@@ -7,7 +7,6 @@
    <li><b>Võ Minh Triều</b></li>
    <li>Nguyễn Đức Trực</li>
    <li>Nguyễn Thủy</li></li>
-   <li>Tuyết Trinh</li>
    <li>Nguyễn Nhị Cẩm Tiên</li>
 </p>
 
